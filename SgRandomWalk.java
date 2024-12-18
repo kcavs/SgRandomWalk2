@@ -20,11 +20,15 @@ public class SgRandomWalk{
             int randx=(int)((Math.random()*21)-10);
             tries+=1;
             dot.translate(randx,randy);
-            double dist=Math.sqrt(((randx-150)*(randx-150))+((randy-150)*(randy-150)));
+            int X=dot.getX()-100;
+            int Y=dot.getY()-100;
+            int x2=X*X;
+            int y2=Y*Y;
+            int dist= (int) Math.sqrt(x2+y2);
             if(dist>100){
                 escaped=true;
                 System.out.println("it took "+tries+" to escape");
             }
-        }
     }
+}
 }
